@@ -1,0 +1,83 @@
+{
+    "mode": "sr",
+    "use_cl": true,
+    "gpu_ids": [0,1,2,3],
+
+    "scale": 16,
+    "is_train": true,
+    "use_chop": true,
+    "rgb_range": 255,
+    "self_ensemble": false,
+    "save_image": false,
+
+    "datasets": {
+        "train": {
+            "mode": "LRHR",
+            "dataroot_HR": "/home/graduate/wjh/trainimg/trainingset_1to1400_crop/HR",
+            "dataroot_LR": "/home/graduate/wjh/trainimg/trainingset_1to1400_crop/x16downsample",
+            "data_type": "img",
+            "n_workers": 8,
+            "batch_size": 8,
+            "LR_size": 24,
+            "HR_size": 384,
+            "use_flip": true,
+            "use_rot": true,
+            "noise": "."
+        },
+        "val": {
+            "mode": "LRHR",
+            "dataroot_HR": "/home/graduate/wjh/validimg/HR/x16",
+            "dataroot_LR": "/home/graduate/wjh/validimg/LR/x16",
+            "data_type": "img"
+        }
+    },
+
+    "networks": {
+        "which_model": "SRFBN",
+        "num_features": 64,
+        "in_channels": 3,
+        "out_channels": 3,
+        "num_steps": 4,
+        "num_groups": 6
+    },
+
+    "network_D": {
+        "which_model_D": "discriminator_vgg_128"
+        , "norm_type": "batch"
+        , "act_type": "leakyrelu"
+        , "mode": "CNA"
+        , "nf": 64
+        , "in_nc": 3
+    },
+
+    "solver": {
+        "type": "ADAM",
+        "learning_rate": 0.001,
+        "weight_decay_D": 0,
+        "beta1_D": 0.9,
+        "lr_D": 1e-4,
+        "weight_decay": 0,
+        "lr_scheme": "MultiStepLR",
+        "lr_steps": [200, 400, 600, 800],
+        "lr_gamma": 0.5,
+        "loss_type": "l1",
+        "manual_seed": 0,
+        "num_epochs": 1000,
+        "skip_threshold": 3,
+        "split_batch": 1,
+        "save_ckp_step": 50,
+        "save_vis_step": 1,
+        "pretrain": null,
+        "pretrained_path": "./experiments/SRFBN_in3f64_x16/epochs/last_ckp.pth",
+        "cl_weights": [0.01, 0.01, 0.01, 0.01],
+        "feature_loss_weights": [1, 1, 1, 1],
+        "tv_loss_weights": [1e-5, 1e-5, 1e-5, 1e-5],
+        "style_loss_weights":[0, 0, 0, 0],
+        "fft_loss_weights":[3e-7,3e-7,3e-7,3e-7],
+        "gan_weight": [5e-3,5e-3,5e-3,5e-3],
+        "gan_type": "vanilla",
+        "D_update_ratio": 1, 
+        "D_init_iters": 0,
+        "gp_weigth": 10
+    }
+}

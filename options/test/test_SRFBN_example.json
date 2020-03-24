@@ -1,0 +1,54 @@
+{
+    "mode": "sr",
+    "use_cl": true,
+    "gpu_ids": [0,1,2,3],
+
+    "scale": 16,
+    "degradation": "BI",
+    "is_train": false,
+    "use_chop": true,
+    "rgb_range": 255,
+    "self_ensemble": false,
+
+    "datasets": {
+//        "test_set1": {
+//            "mode": "LRHR",
+//            "dataroot_HR": "./results/HR/Set5/x4",
+//            "dataroot_LR": "./results/LR/LRBI/Set5/x4",
+//            "data_type": "img"
+//        },
+//        "test_set2": {
+//             "mode": "LRHR",
+//             "dataroot_HR": "./results/HR/Set14/x4",
+//             "dataroot_LR": "./results/LR/LRBI/Set14/x4",
+//             "data_type": "img"
+//         },
+        "test_set3": {
+             "mode": "LR",
+             "dataroot_LR": "/home/graduate/cyf/NTIRE2020_testLR",
+             "data_type": "img"
+         }
+    },
+
+    "networks": {
+        "which_model": "SRFBN",
+        "num_features": 64,
+        "in_channels": 3,
+        "out_channels": 3,
+        "num_steps": 4,
+        "num_groups": 6
+    },
+
+    "solver": {
+        "pretrained_path": "./experiments/SRFBN_in3f64_x16/epochs/best_ckp.pth",
+        "feature_loss_weights": [0.01, 0.01, 0.01, 0.01],
+        "tv_loss_weights": [1e-7, 1e-7, 1e-7, 1e-7],
+        "style_loss_weights":[0, 0, 0, 0],
+        "fft_loss_weights":[3e-5,3e-5,3e-5,3e-5],
+        "gan_weight": [5e-3,5e-3,5e-3,5e-3],
+        "gan_type": "vanilla",
+        "D_update_ratio": 1, 
+        "D_init_iters": 0,
+        "gp_weigth": 10
+    }
+}
