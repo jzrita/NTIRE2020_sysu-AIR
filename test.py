@@ -10,7 +10,7 @@ from data import create_dataset
 
 def main():
     parser = argparse.ArgumentParser(description='Test Super Resolution Models')
-    parser.add_argument('-opt', type=str, required=True, help='Path to options JSON file.', default='options/test/test_SRFBN_example.json')
+    parser.add_argument('-opt', type=str, help='Path to options JSON file.', default='options/test/test_SRFBN_example.json')
     opt = option.parse(parser.parse_args().opt)
     opt = option.dict_to_nonedict(opt)
 

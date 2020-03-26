@@ -12,7 +12,7 @@ from data import create_dataset
 
 def main():
     parser = argparse.ArgumentParser(description='Train Super Resolution Models')
-    parser.add_argument('-opt', type=str, required=True, help='Path to options JSON file.', default='options/train/train_SRFBN.json')
+    parser.add_argument('-opt', type=str, help='Path to options JSON file.', default='options/train/train_SRFBN.json')
     opt = option.parse(parser.parse_args().opt)
     writer = SummaryWriter(comment=f'wjh')
 

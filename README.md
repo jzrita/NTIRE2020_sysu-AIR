@@ -10,6 +10,7 @@ The code is developed by team [sysu-AIR](https://github.com/jzrita/NTIRE2020_sys
 2. [Requirements](#Requirements)
 3. [Test](#Test)
 4. [Train](#Train)
+5. [Result](#Result)
 
 
 ## FFNSR
@@ -46,13 +47,13 @@ The **sysu-AIR** team proposed **A Fast Feedback Network for Large Scale Image S
 2. Download our pre-trained model from the links below, unzip the models and place them to `./models`.
 
     [Click_here_to_download](https://pan.baidu.com/s/1XytyS1XyUidfP8uDeBuN6g)
-    （code: a3mu）
+    (code: a3mu)
     
  
 3. CD the folder and install the requirements:
 
    ```shell
-   cd A-Fast-Feedback-Network-for-Large-Scale-Image-SR && pip install -r requirements.txt
+   cd NTIRE2020_sysu-AIR && pip install -r requirements.txt
    ```
 
 4. Place the LR pictures to `./picture`.
@@ -77,8 +78,14 @@ The **sysu-AIR** team proposed **A Fast Feedback Network for Large Scale Image S
 
 2. Run command to train the model：
    ```shell
-   cd A-Fast-Feedback-Network-for-Large-Scale-Image-SR
+   cd NTIRE2020_sysu-AIR
    python train.py
    ```
 
 3. You can monitor the training process in `./experiments`.
+
+## Result
+1. Download and view our test result.
+
+    [Click_here_to_download](https://pan.baidu.com/s/12zH-7AssJd3HJql-gjrrlw)
+    (code: fiz9)
