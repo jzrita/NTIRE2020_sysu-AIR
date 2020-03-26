@@ -3,7 +3,7 @@ FFNSR @ NTIRE 2020
 
 This repository is Pytorch code for our proposed FFNSR.
 
-The code is developed by team [sysu-AIR](https://github.com/jzrita/NTIRE2020_sysu-AIR), and tested on Ubuntu 16.04 environment (Python 3.6, PyTorch 1.0.1, CUDA 10.0) with 2080Ti GPUs.The details about our proposed FFNSR can be found in [our main paper].
+The code is developed by team [sysu-AIR](https://github.com/jzrita/NTIRE2020_sysu-AIR), and tested on Ubuntu 16.04 environment (Python 3.6, PyTorch 1.0.1, CUDA 10.0) with 2080Ti GPUs.The details about our proposed FFNSR can be found in [our factsheet](./NTIRE2020_Perceptual_Extreme_SR_sysu-AIR.pdf).
 
 # Contents
 1. [FFNSR](#FFNSR)
