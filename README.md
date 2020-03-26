@@ -10,18 +10,17 @@ The code is developed by team [sysu-AIR](https://github.com/jzrita/NTIRE2020_sys
 2. [Requirements](#Requirements)
 3. [Test](#Test)
 4. [Train](#Train)
-5. [Results](#results)
 
 
 ## FFNSR
 
-这里再填一些介绍性的文字或者图片。
+The **sysu-AIR** team proposed **A Fast Feedback Network for Large Scale Image Super-Resolution**. Inspired by **SRFBN** and **IMDN**, the proposed FFNSR is still reserved the RNN structure but with a information multi-distillation module (IMDM), which can beneﬁt image SR tasks and accelerate inference speed.
 
-* Number of parameters:  xxx,xxx,xxx ()
+* Number of parameters:  2,099,625
 
-* Average PSNR on validation data: xxxx dB
+* Average PSNR on validation data: 29.01096 dB
 
-* Average inference time (RTX 2080 Ti) on validation data: xxxx second 
+* Average inference time (RTX 2080 Ti) on validation data: 4.35 second 
 
     Note: We selected the best average inference time among three trials
 
@@ -46,7 +45,8 @@ The code is developed by team [sysu-AIR](https://github.com/jzrita/NTIRE2020_sys
 
 2. Download our pre-trained model from the links below, unzip the models and place them to `./models`.
 
-    [Click_here_to_download](https://www.baidu.com/)
+    [Click_here_to_download](https://pan.baidu.com/s/1XytyS1XyUidfP8uDeBuN6g)
+    （code: a3mu）
     
  
 3. CD the folder and install the requirements:
@@ -64,18 +64,21 @@ The code is developed by team [sysu-AIR](https://github.com/jzrita/NTIRE2020_sys
    ...
    ```
 
-5. Then run the **following commands** to test the model:
+5. Edit `./options/test/test_SRFBN_example.json` for your needs according to [`./options/test/README.md`.](./options/test/README.md)
+
+6. Then run the **following commands** to test the model:
 
    ```shell
     python test.py
    ```
 
 ## Train
-1. Run command to train the model：
+1. Edit `./options/train/train_SRFBN.json` for your needs according to [`./options/train/README.md`.](./options/train/README.md)
+
+2. Run command to train the model：
    ```shell
    cd A-Fast-Feedback-Network-for-Large-Scale-Image-SR
    python train.py
    ```
 
-## Results
-主要放图片或者psnr评分
+3. You can monitor the training process in `./experiments`.
