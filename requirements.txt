@@ -1,0 +1,11 @@
+scikit-image
+imageio
+torch>=0.4.1 
+tqdm
+pandas
+opencv-python
+Cython
+lmdb
+scipy
+tensorboard
+
