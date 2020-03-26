@@ -41,7 +41,7 @@ The **sysu-AIR** team proposed **A Fast Feedback Network for Large Scale Image S
 1. Clone this repository:
 
    ```shell
-   git clone https://github.com/sysu17364012/A-Fast-Feedback-Network-for-Large-Scale-Image-SR
+   git clone https://github.com/jzrita/NTIRE2020_sysu-AIR.git
    ```
 
 2. Download our pre-trained model from the links below, unzip the models and place them to `./models`.
