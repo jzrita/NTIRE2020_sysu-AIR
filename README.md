@@ -33,7 +33,6 @@ The **sysu-AIR** team proposed **A Fast Feedback Network for Large Scale Image S
 - tqdm 
 - pandas
 - cv2 (pip install opencv-python)
-- Matlab 
 
 ## Test
 
